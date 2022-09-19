@@ -1,0 +1,40 @@
+<style>
+    @import url('/theme.css');
+    :host {
+        display: flex;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        justify-content: center;
+        align-items: center;
+        background-color: #FFF1;
+    }
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: var(--bg-color);
+        padding: 1em;
+        border-radius: var(--border-radius);
+    }
+    .content {
+        padding-bottom: 1em;
+    }
+    :host([nocancel]) #btn-cancel {
+        display: none;
+    }
+</style>
+
+<div class="container" >
+    <div class="content" >
+        <slot></slot>
+    </div>
+    <div style="display: flex; gap: 1em; justify-content: flex-end; width: 100%;">
+        <button type="button" id="btn-cancel" >Cancel</button>
+        <button type="button" id="btn-confirm" >Confirm</button>
+    </div>
+</div>
+
